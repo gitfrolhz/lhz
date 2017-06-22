@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app  PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+      
+        <!-- Spring配置。（必须配，要不会找不到bean） -->    
+        <listener>    
+            <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>    
+        </listener>  
+      
+        <!-- spring mvc （系统在启动的时候会根据springmvc-servlet中的配置找到所有的controller并初始化）-->  
+        <servlet>  
+            <servlet-name>springmvc</servlet-name>  
+            <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+            <load-on-startup>1</load-on-startup>  
+        </servlet>  
+      
+        <servlet-mapping>  
+            <servlet-name>springmvc</servlet-name>  
+            <url-pattern>/</url-pattern><!-- 这里不能加* -->  
+        </servlet-mapping>  
+      
+    </web-app>  
